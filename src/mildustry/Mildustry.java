@@ -1,9 +1,9 @@
-package template;
+package mildustry;
 
 import mindustry.mod.*;
-import template.gen.*;
+import mildustry.gen.*;
 
-public class ModTemplate extends Mod{
+public class Mildustry extends Mod{
     @Override
     public void loadContent(){
         EntityRegistry.register();
