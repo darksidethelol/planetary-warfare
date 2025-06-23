@@ -2,7 +2,7 @@
     "displayName": "Planetary Warfare",
     "description": "war thunder anyone?",
     "version": "v0.0",
-    "minGameVersion": "146",
+    "minGameVersion": "149",
     "author": "DarksideTheLOL",
     "java": true,
     "main": "mildustry.Mildustry"
