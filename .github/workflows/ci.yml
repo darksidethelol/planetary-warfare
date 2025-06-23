@@ -13,7 +13,7 @@ permissions:
 jobs:
   buildJar:
     env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.PUBLIC_API_ACCESS_TOKEN }}
     name: Build and Publish Jar
     runs-on: ubuntu-latest
     steps:
