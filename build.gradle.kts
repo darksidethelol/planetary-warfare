@@ -1,22 +1,22 @@
 import arc.files.*
-        import arc.util.*
-        import arc.util.serialization.*
-        import ent.*
-        import java.io.*
+import arc.util.*
+import arc.util.serialization.*
+import ent.*
+import java.io.*
 
-        buildscript{
-            val arcVersion: String by project
-            val useJitpack = property("mindustryBE").toString().toBooleanStrict()
+buildscript{
+    val arcVersion: String by project
+    val useJitpack = property("mindustryBE").toString().toBooleanStrict()
 
-            dependencies{
-                classpath("com.github.Anuken.Arc:arc-core:$arcVersion")
-            }
+    dependencies{
+        classpath("com.github.Anuken.Arc:arc-core:$arcVersion")
+    }
 
-            repositories{
-                if(!useJitpack) maven("https://maven.xpdustry.com/mindustry")
-                maven("https://jitpack.io")
-            }
-        }
+    repositories{
+        if(!useJitpack) maven("https://maven.xpdustry.com/mindustry")
+        maven("https://jitpack.io")
+    }
+}
 
 plugins{
     java
