@@ -1,27 +1,32 @@
 package mildustry.content;
 
-import arc.func.Prov;
-import arc.graphics.Color;
+import arc.graphics.*;
+import arc.graphics.g2d.*;
 import arc.math.*;
-import arc.math.geom.Rect;
+import arc.math.geom.*;
 import arc.struct.*;
-import arc.struct.ObjectMap.Entry;
-import mindustry.ai.types.FlyingAI;
-import mindustry.content.*;
-import mindustry.entities.abilities.MoveEffectAbility;
+import arc.util.*;
+import mindustry.ai.*;
+import mindustry.ai.types.*;
+import mindustry.annotations.Annotations.*;
+import mindustry.entities.*;
+import mindustry.entities.abilities.*;
 import mindustry.entities.bullet.*;
 import mindustry.entities.effect.*;
 import mindustry.entities.part.*;
 import mindustry.entities.pattern.*;
 import mindustry.gen.*;
-import mindustry.graphics;
-import mindustry.graphics.Pal;
+import mindustry.graphics.*;
 import mindustry.type.*;
-import mindustry.type.ammo.ItemAmmoType;
-import mindustry.type.weapons.PointDefenseWeapon;
-import mindustry.world.meta.BlockFlag;
+import mindustry.type.ammo.*;
+import mindustry.type.unit.*;
+import mindustry.type.weapons.*;
+import mindustry.world.meta.*;
 
-@SuppressWarnings("unchecked")
+import static arc.graphics.g2d.Draw.*;
+import static arc.graphics.g2d.Lines.*;
+import static arc.math.Angles.*;
+import static mindustry.Vars.*;
 
 
 public class MDUnitTypes{
@@ -31,7 +36,7 @@ public class MDUnitTypes{
 }
 
 public static void load(){
-    gust = new UnitType("baron"){{
+    baron = new UnitType("baron"){{
         float unitRange = 32 * tilesize;
         speed = 2f;
         hitSize = 15f;
@@ -77,7 +82,7 @@ public static void load(){
         						lifetime = unitRange / speed;
         						knockback = 4f;
         						despawnHit = true;
-        						shootEffect = new MultiEffect{
+        						shootEffect = new MultiEffect(
         							Fx.shootPyraFlame,
         							Fx.shootSmallSmoke
         						);
